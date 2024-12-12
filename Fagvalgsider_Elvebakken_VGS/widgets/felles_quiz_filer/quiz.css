@@ -1,0 +1,56 @@
+/*Tilpassning av h1 burde skje i egen css-fil inni mappen for den spesifike quizen*/
+
+#panel {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: navy;
+    width: auto;
+}
+#spørsmål {
+    text-align: center;
+    font-size: 32px;
+    margin: 20px;
+}
+#alternativ-område {
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 10px;
+}
+
+.alternativ {
+    background-color: var(--elvebakken_rosa);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.alternativ:hover {
+    background-color: #eda4ca;
+    cursor: pointer;
+}
+button {
+    align-self: center;
+    margin-top: 20px;
+    font-size: 24px;
+    padding: 10px 20px;
+    background-color: var(--elvebakken_blå);
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: var(--elvebakken_blå_lys);
+}
+#spill-igjen-knapp {
+    display: none;
+}
+#poeng {
+    font-size: 30px;
+    color: darkslategray;
+    margin-top: 20px;
+}

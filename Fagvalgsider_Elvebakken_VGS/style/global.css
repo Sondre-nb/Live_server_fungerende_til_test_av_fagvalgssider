@@ -1,0 +1,70 @@
+:root {
+    --elvebakken_blå: #74b2e1;
+    --elvebakken_blå_lys: #9CC9EB;
+    --elvebakken_rosa: #DC8EB6;
+    --elvebakken_gul: #F0E691;
+    --elvebakken_oransje: #FAB965;
+    --mørke_blå: #204B57;
+    --mørke_grønn: #75DC98;
+    --lyse_grønn: #89F1AC;
+}
+* {
+    margin: 0;
+    font-family: 'Oslo Sans', sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+/* bølgen som skiller seksjonene fra hverandre */
+.skillelinje {
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    background-image: url("/Fagvalgsider_Elvebakken_VGS/assets/icons/bølge.png");
+    background-repeat: repeat-x;
+    background-size: contain;
+    margin-block: 10px;
+}
+
+.logo-bg {
+    background-color: white;
+    height: 28vh;
+    width: 28vh;
+    margin: 25px;
+    padding: 25px;
+    border-radius: 50%;
+}
+/* endrer skriftstørrelse på overksrift, størrelse på logo, og fjerner logoen i footeren når bredden er under 700px */
+@media (max-width: 700px) {
+    #footer-logo {
+        display: none;
+    }
+}
+footer {
+    position: relative;
+    background-color: var(--elvebakken_blå);
+    color: white;
+    text-align: center;
+    padding: 40px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer h3 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.3rem;
+}
+
+footer a {
+    color: white;
+    font-size: 1.2rem;
+}
+
+#footer-logo {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    height: 70px;
+    transform: translateY(-50%);
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rakett_simulering.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>Rakett simulering</title>
+</head>
+<body>
+    <div class="spill-tittel-div">Rakett simulering  <a href="/Fagvalgsider_Elvebakken_VGS/widgets/rakett_simulering/" id="fullskjerm-link">Åpne i fullskjerm</a></div>
+    <canvas id="vektor-canvas" width="480" height="330"></canvas>
+    <div>
+        <button id="reset-rocket">Reset</button>
+        <button id="launch-rocket">Launch</button>
+        <button id="deploy-parachute">Deploy parachute</button>
+        <label for="launch-angle">Launch Angle:</label>
+        <input type="range" id="launch-angle" name="launch-angle" min="-90" max="90" value="20">
+        <span id="angle-value">20</span>°
+    </div>
+    <br>
+    <div>
+        <label for="toggle-advanced-settings">Show Advanced Settings</label>
+        <input type="checkbox" id="toggle-advanced-settings">
+    </div>
+    <div id="advanced-settings">
+        <div>
+            <label for="zoom">Zoom:</label>
+            <input type="range" id="zoom" name="zoom" min="0.1" max="5" step="0.1" value="0.7">
+            <span id="zoom-value">0.7</span>
+        </div>
+        <div>
+            <label for="nose-color">Nose Color:</label>
+            <input type="color" id="nose-color" name="nose-color" value="#ff0000">
+            <label for="fins-color">Fins Color:</label>
+            <input type="color" id="fins-color" name="fins-color" value="#ff9100">
+            <label for="body-color">Body Color:</label>
+            <input type="color" id="body-color" name="body-color" value="#ff0000">
+        </div>
+        <br>
+        <div>
+            <label for="thrust">Thrust:</label>
+            <input type="range" id="thrust" name="thrust" min="0" max="1000000" value="150000">
+            <span id="thrust-value">150 kN</span>
+        </div>
+        <br>
+        <div>
+            <label for="mass">Mass:</label>
+            <input type="range" id="mass" name="mass" min="100" max="2000" value="1000">
+            <span id="mass-value">1000</span> kg
+        </div>
+        <br>
+        <div>
+            <label for="burn-time">Burn Time:</label>
+            <input type="range" id="burn-time" name="burn-time" min="0.1" max="75" step="0.1" value="0.4">
+            <span id="burn-time-value">0.4 s</span>
+        </div>
+    </div>
+    <script src="vek2.js"></script>
+    <script src="rakett_simulering.js"></script>
+</body>
+</html>

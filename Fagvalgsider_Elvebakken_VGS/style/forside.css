@@ -1,0 +1,402 @@
+#fag-oversikt {
+    padding: 5%;
+    padding-bottom: 0px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.fag-element {
+    background-color: rgb(250, 250, 246);
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+    border: 0px transparent solid;
+    border-radius: 10px;
+}
+
+.fag-info {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+.fag-bilde {
+    width: 40%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border: 0px solid transparent;
+}
+@media (max-width: 1200px) {
+    .fag-bilde{
+        height: 350px;
+    }
+}
+@media (max-width: 850px) {
+    .fag-bilde{
+        height: 400px;
+    }
+}
+.fag-bilde:nth-child(odd) {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.fag-bilde:nth-child(even) {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.fag-tittel {
+    color: var(--elvebakken_blå);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    word-wrap: break-word; 
+    word-break: break-word;
+}
+
+.fag-sitat {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-top: auto;
+    padding: 10px;
+}
+
+.fag-se-mer-knapp {
+    background-color: var(--mørke_grønn);
+    border: 1px transparent solid;
+    border-radius: 5px;
+    width: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-top: auto;
+    font-size: 1.5rem;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.fag-se-mer-knapp:hover {
+    background-color: var(--lyse_grønn);
+}
+
+#intro-område{
+    padding: 50px 5% 0 5%;
+}
+
+#intro {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .fag-element {
+        flex-direction: column;
+    }
+
+    .fag-element:nth-child(even) {
+        flex-direction: column-reverse;
+    }
+
+    .fag-bilde {
+        width: auto;
+        border-bottom-right-radius: 0px !important; /* Trengs for å overskrive den element spesifike radiusen */
+        border-bottom-left-radius: 0px !important; /* Trengs for å overskrive den element spesifike radiusen */
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        margin-bottom: 10px;
+        height: 350px;
+    }
+
+    .fag-info {
+        margin: 0px;
+        padding: 10px;
+    }
+
+    .fag-se-mer-knapp {
+        margin-bottom: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .fag-sitat {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+#fag_meny{
+    overflow-x: auto;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(var(--antall_programfag), 1fr);
+    gap: 30px;
+
+    /* skjuler scrollebaren til fag_menyen for IE, Edge og Firefox */
+    -ms-overflow-style: none;  /* IE og Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+/* skjuler scrollebaren til fag_menyen for Chrome, Safari og Opera */
+#fag_meny::-webkit-scrollbar{
+    display: none;
+}
+/* området under intro-tekst, ned til de avlange programfag-boksene */
+#fag-meny-område{
+    margin: 50px 5% 0 5%;
+}
+/*lenke til de forskjellige valgfagene*/
+.fag_i_meny{
+    position: relative;
+    height: 250px;
+    width: 200px;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* bilde i lenkene til de ulike programfagene */
+.fagmeny_bilde{
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0; /* avrunder de øverste hjørnene */
+}
+/* programfag-navnene i den øverste programfag-oversikten */
+#fag_meny p{
+    padding-left: 10px;
+    font-size: large;
+}
+/* programfag-oversikt-overskrift */
+#fag-meny-tittel{
+    display: flex;
+    align-items: end;
+    margin-bottom: 15px;
+}
+/* "vis alle"-tekst ved siden av programfag-overskrift */
+#vis-alle{
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
+#vis-alle:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+/* pil i lenkene til sidene om programfagene */
+.lenke_pil{
+    width: 30%;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    /*Flytter pilen tilbake etter hover*/
+    transform: translate(0px, 0px);
+    transition-duration: 0.1s;
+}
+/*Flytter pilen ved hover og focus*/
+.fag_i_meny:hover .lenke_pil, .fag_i_meny:focus .lenke_pil{
+    transform: translate(10px, 0px);
+    transition-duration: 0.1s;
+}
+
+.bla_knapp{
+    position: absolute;
+    /*sentrerer vertikalt inni fag-menyen*/
+    align-self: center;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-right: black solid 7px;
+    border-top: black solid 7px;
+    background-color: rgba(255, 255, 255, 0);
+}
+/*hover-effekt for knappene man blar i menyen med*/
+.bla_knapp:hover{
+    cursor: pointer;
+}
+@media (min-width: 700px){
+    .bla_knapp:hover{
+        border-right: var(--elvebakken_blå) solid 7px;
+        border-top: var(--elvebakken_blå) solid 7px;
+    }
+}
+/*bildene (pilene) i knappene for å scrolle menyen*/
+.bla_knapp > img{
+    width: 100%;
+    height: 100%;
+}
+#høyre_bla_knapp{
+    right: 20px;
+    transform: rotate(45deg);
+}
+#venstre_bla_knapp{
+    transform: rotate(-135deg);
+    display: none;
+    left: 20px;
+}
+/* bakgrunnsbilde øverst på siden */
+#forside {
+    position: relative;
+    display: grid;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-image: url("/Fagvalgsider_Elvebakken_VGS/assets/imgs/forside/forsidebilde_realfag.png"); /* her kan bakgrunnsbilde endres */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay; /* gir bakgrunnen en mørkere farge */
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+    font-size: 3rem;
+}
+/* overskrift øverst på skjermen */
+#forside h1 {
+    padding: 20px;
+    color: white;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+/* pil som tar deg nedover på siden i forside-seksjonen */
+#forside #ned-knapp {
+    position: absolute;
+    align-self: end;
+    justify-self: center;
+    bottom: 10%;
+    width: 50px;
+    height: 50px;
+    border-right: 10px solid white;
+    border-bottom: 10px solid white;
+    font-size: 20px;
+    line-height: 60px;
+    display: grid;
+    transform: rotate(45deg);
+    /*box-shadow: 0 0 15px 0px #000000;
+    clip-path: inset(0px -15px -15px 0px);*/
+    cursor: pointer;
+}
+/* flytter knapp nedover ved hover */
+#forside #ned-knapp:hover {
+    bottom: 8%;
+}
+/* Elvebakken-logo i hjørnet øverst til venstre av skjermen */
+#elvebakken-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22vh;
+    margin: 20px;
+}
+#elvebakken-logo img {
+    height: 100%;
+}
+#programområder {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    font-size: 1.1rem;
+}
+#programområder div, #programområder a {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 0 0 15px 15px;
+    text-decoration: none;
+    color: black;
+}
+#programområder a:nth-child(2) {
+    background-color: var(--lyse_grønn);
+}
+#programområder a:nth-child(3) {
+    background-color: var(--elvebakken_blå);
+}
+#programområder a:nth-child(4) {
+    background-color: var(--elvebakken_oransje);
+}
+#programområder a:nth-child(5) {
+    background-color: var(--elvebakken_rosa);
+}
+#programområder a:nth-child(6) {
+    background-color: var(--elvebakken_gul);
+}
+#programområder a:nth-child(2):hover {
+    background-color: #A5F5C0;
+}
+#programområder a:nth-child(3):hover {
+    background-color: var(--elvebakken_blå_lys);
+}
+#programområder a:nth-child(4):hover {
+    background-color: #FFC982;
+}
+#programområder a:nth-child(5):hover {
+    background-color: #E5B1CB;
+}
+#programområder a:nth-child(6):hover {
+    background-color: #F4EBA7;
+}
+
+/* endrer skriftstørrelse på overksrift, størrelse på logo, og fjerner logoen i footeren når bredden er under 700px */
+@media (max-width: 700px) {
+    #forside h1{
+        font-size: 15vw;
+    }
+    #elvebakken-logo {
+        height: 16vh;
+    }
+}
+/* gjør ned-knappen mindre når høyden på skjermen er mindre enn 400px */
+@media (max-height: 400px) {
+    #forside #ned-knapp {
+        width: 40px;
+        height: 40px;
+    }
+}
+@media (max-width: 600px) {
+    .fag-element {
+        flex-direction: column;
+    }
+
+    .fag-element:nth-child(even) {
+        flex-direction: column-reverse;
+    }
+
+    .fag-bilde {
+        width: auto;
+        border-bottom-right-radius: 0px !important; /* Trengs for å overskrive den element spesifike radiusen */
+        border-bottom-left-radius: 0px !important; /* Trengs for å overskrive den element spesifike radiusen */
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        margin-bottom: 10px;
+        height: 350px;
+    }
+
+    .fag-info {
+        margin: 0px;
+        padding: 10px;
+    }
+
+    .fag-se-mer-knapp {
+        margin-bottom: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .fag-sitat {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #programområder {
+        flex-direction: column;
+    }
+
+    #programområder a {
+        border-radius: 0;
+    }
+}

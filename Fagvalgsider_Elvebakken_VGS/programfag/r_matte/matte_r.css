@@ -1,0 +1,28 @@
+/* bakgrunnsbilde øverst på side */
+#forside-bilde {
+    background-image: url("/Fagvalgsider_Elvebakken_VGS/assets/imgs/matte_r/matte_r_placeholder.png"); /* her kan bildet endres */
+}
+.visuelt-element {
+    background-image: url("/Fagvalgsider_Elvebakken_VGS/assets/imgs/matte_r/matte_r_placeholder.png"); /* bilde kan byttes ut */
+}
+#fagnummer2 .visuelt-element {
+    background-image: url("/Fagvalgsider_Elvebakken_VGS/assets/imgs/matte_r/matte_r_placeholder.png"); /* bilde kan byttes ut */
+}
+/*Liste over sentrale temaer*/
+.sentrale-temaer > ul > li {
+    list-style-type: none;
+    font-weight: bold;
+}
+.sentrale-temaer > ul {
+    -webkit-padding-start: 0;
+    padding-block: 1vw;
+    padding: 0;
+}
+.sentrale-temaer li {
+    padding: 1vw;
+}
+@media(max-width: 670px){
+    #forside-bilde {
+        font-size: 7vw;
+    }
+}
